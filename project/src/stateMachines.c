@@ -80,6 +80,7 @@ void main_state()
     ring_down();
     break;
   case 3:
+    buzzer_set_period(0); //buzzer turned off
     dim(); //lights dimmed to 25%
     dim();
     break;
