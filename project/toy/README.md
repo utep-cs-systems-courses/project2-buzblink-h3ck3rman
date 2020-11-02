@@ -1,28 +1,24 @@
+#Project 2: Blinky-Buzzy Toy
 ## Description
-This program uses interrupts to detect when a switch is pressed or
-released.
+This program uses the MSP-430 and allows you to use sirens and dim lights
+#through different buttons.
 
-Press S1, and the green LED is illuminated.  Release it, and the red
-LED is illuminated instead.
+## Compiling/Running
+1. When using the VM, go into the src file and type "make", this will compile
+all the files need to run the program.
+2. Once you have plugged in the MSP-430 to your computer and connected it to
+the VM, then you can type "make load", which will run the written program
+in the plugged in CPU.
+3. To erase all the compiled files, type "make clean".
 
-## Exploration
-_LED toggle:_  A great initial project would be to modify this program to
-implement a state machine that "toggled" between the red and green LEDs
-each time the button is pressed. The LED should remain illuminated until
-the next time the button is pressed.
-
-_Separation of duties:_ Input and output are not always so closely
-connected.  Frequently an input begins a computation that eventually
-results in an output. For example, pressing "next song" on a streaming
-audio player begins a complicated multi-stage process that eventually
-results in a different song being played.  Suggestion: start with
-something simple such as responding to the buttons using interrupts to
-set state variables, and update the LEDs when the timer interrupt
-occurs.  
-
-_Time and button interaction:_
-Integrate the timer mechanisms from the blink demo and have the button affect the blink sequence.
-
-## Some Advice
-When creating your own variants to the demo programs,
-it's probably a good idea to keep a copy of the original program (or really understand how _git checkout_ works).  
+## How It Works 
+There are 5 buttons you can use on the MSP-430:
+* Button 1: The green light turns on and indicates that the frequency on the
+siren is rising.
+* Button 2: The red light turns on and indicates that the frequency on the
+siren is dropping.
+* Button 3: Both red and green lights are turned on but dimmed.
+* Button 4: Both red and green lights are turned on normally without being
+dimmed.
+* Reset: This button is not part of the program, but if needed, it turns off
+all lights and siren sounds for the MSP-430.
