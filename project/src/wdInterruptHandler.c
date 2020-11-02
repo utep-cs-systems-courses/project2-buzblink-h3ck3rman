@@ -7,7 +7,7 @@
 char button_state;
 
 void
-__interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
+__interrupt_vec(WDT_VECTOR) WDT(){
   static char blink_count = 0;
   if(++blink_count == 1){
     main_state();
